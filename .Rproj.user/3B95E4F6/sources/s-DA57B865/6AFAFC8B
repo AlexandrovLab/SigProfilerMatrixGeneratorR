@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564605064759.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6AFAFC8B",
+    "lastKnownWriteTime" : 1564607977,
+    "last_content_update" : 1564608453015,
+    "path" : "~/Desktop/SigProfilerMatrixGeneratorR/R/SigProfilerMatrixGeneratorR.R",
+    "project_path" : "R/SigProfilerMatrixGeneratorR.R",
+    "properties" : {
+        "cursorPosition" : "26,20",
+        "scrollLine" : "11"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
