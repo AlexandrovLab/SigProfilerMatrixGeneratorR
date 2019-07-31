@@ -8,9 +8,9 @@
 #'
 #' @examples
 #'
-#' @export func
+#' @export SigProfilerMatrixGeneratorR
 
-func <- function(project, genome, matrix_path, exome=F, bed_file=NULL, chrom_based=F, plot=F, tsb_stat=F, seqInfo=F, cushion=100, gs=F) {
+SigProfilerMatrixGeneratorR <- function(project, genome, matrix_path, exome=F, bed_file=NULL, chrom_based=F, plot=F, tsb_stat=F, seqInfo=F, cushion=100, gs=F) {
   os <- reticulate::import("os")
   sys <- reticulate::import("sys")
 
@@ -25,5 +25,4 @@ install <- function(genome, custom=F, rsync=F, bash=T, ftp=T){
   genInstall <- reticulate::import("SigProfilerMatrixGenerator.install")
   genInstall$install(genome, custom, rsync, bash, ftp)
   sys$stdout$flush()
-}
-
+  }
