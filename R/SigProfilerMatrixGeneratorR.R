@@ -24,5 +24,6 @@ func <- function(project, genome, matrix_path, exome=F, bed_file=NULL, chrom_bas
 install <- function(genome, custom=F, rsync=F, bash=T, ftp=T){
   genInstall <- reticulate::import("SigProfilerMatrixGenerator.install")
   genInstall$install(genome, custom, rsync, bash, ftp)
+  sys$stdout$flush()
 }
 

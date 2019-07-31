@@ -1,12 +1,14 @@
 Package: SigProfilerMatrixGeneratorR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: An R wrapper for running the SigProfilerMatrixGenerator framework
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Erik Bergstrom
+Maintainer: Erik Bergstrom <ebergstr@eng.ucsd.edu>
+Description: SigProfilerMatrixGenerator creates mutational matrices for all types of somatic mutations. 
+		It allows downsizing the generated mutations only to parts for the genome (e.g., exome or a 
+		custom BED file). The tool seamlessly integrates with other SigProfiler tools.
+
+License: BSD 2-Clause
 Encoding: UTF-8
 LazyData: true
 Imports:

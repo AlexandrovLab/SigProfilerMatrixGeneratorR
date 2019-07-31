@@ -1,0 +1,8 @@
+SigProfilerMatrixGeneratorR="/Users/ebergstr/Library/R/3.5/library/SigProfilerMatrixGeneratorR"
+datasets="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/datasets"
+grDevices="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/grDevices"
+graphics="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/graphics"
+methods="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/methods"
+reticulate="/Users/ebergstr/Library/R/3.5/library/reticulate"
+stats="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/stats"
+utils="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/utils"
