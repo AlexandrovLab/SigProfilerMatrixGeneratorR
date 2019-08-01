@@ -1,4 +1,4 @@
-[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://osf.io/s93d5/wiki/home/) [![License](https://img.shields.io/badge/License-BSD\%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause) [![Build Status](https://travis-ci.com/AlexandrovLab/SigProfilerMatrixGenerator.svg?branch=master)](https://travis-ci.com/AlexandrovLab/SigProfilerMatrixGenerator)
+[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://osf.io/s93d5/wiki/home/) [![License](https://img.shields.io/badge/License-BSD\%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause) [![Build Status](https://travis-ci.com/AlexandrovLab/SigProfilerMatrixGeneratorR.svg?branch=master)](https://travis-ci.com/AlexandrovLab/SigProfilerMatrixGeneratorR.svg?branch=master)
 
 # SigProfilerMatrixGeneratorR
 An R wrapper for running the SigProfilerMatrixGenerator (https://osf.io/s93d5/wiki/home/) framework.

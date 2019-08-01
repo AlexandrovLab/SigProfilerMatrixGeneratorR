@@ -1,2 +1,4 @@
 export(SigProfilerMatrixGeneratorR)
 export(install)
+import(devtools)
+import(reticulate)

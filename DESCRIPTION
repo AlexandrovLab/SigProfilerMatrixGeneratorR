@@ -11,4 +11,4 @@ License: BSD 2-Clause
 Encoding: UTF-8
 LazyData: true
 Imports:
-	reticulate
+	reticulate, devtools
