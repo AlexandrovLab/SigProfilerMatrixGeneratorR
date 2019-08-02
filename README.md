@@ -7,10 +7,16 @@ An R wrapper for running the SigProfilerMatrixGenerator (https://osf.io/s93d5/wi
 
 **PREREQUISITES**
 
-devtools 
+devtools  (R) 
 ```
-install.packages("devtools")
+>> install.packages("devtools")
 ```
+reticulate* (R) 
+```
+>> install.packages("reticulate")  
+```
+
+*Reticulate has a known bug of preventing python print statements from flushing to standard out. As a result, some of the typical progress messages are delayed.
 
 **QUICK START GUIDE**
 
@@ -19,24 +25,40 @@ This section will guide you through the minimum steps required to create mutatio
 ```
                           pip install SigProfilerMatrixGenerator
 ```
+2. Open an R session and ensure that your R interpreter recognizes the path to your python3 installation:
+```
+$ R
+>> library("reticulate")
+>> use_python("path_to_your_python3")
+>> py_config()
+python:         /anaconda3/bin/python3
+libpython:      /anaconda3/lib/libpython3.6m.dylib
+pythonhome:     /anaconda3:/anaconda3
+version:        3.6.5 |Anaconda, Inc.| (default, Apr 26 2018, 08:42:37)  [GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)]
+numpy:          /anaconda3/lib/python3.6/site-packages/numpy
+numpy_version:  1.16.1
+```
+If you do not see your python3 path listed, restart your R session and rerun the above commands in order.
+
 2. Install SigProfilerMatrixGeneratorR using devtools:
 ```
-install_github("AlexandrovLab/SigProfilerMatrixGeneratorR")
+>>library("devtools")
+>>install_github("AlexandrovLab/SigProfilerMatrixGeneratorR")
 ```
-3. Load the package in an R session and install your desired reference genome as follows (available reference genomes are: GRCh37, GRCh38, mm9, and mm10):
+3. Load the package in the same R session and install your desired reference genome as follows (available reference genomes are: GRCh37, GRCh38, mm9, and mm10):
 ```
-$ R
 >> library("SigProfilerMatrixGeneratorR")
->> install('GRCh37', rsync=False, bash=True)
+>> install('GRCh37', rsync=FALSE, bash=TRUE)
 ```
-    This will install the human 37 assembly as a reference genome.
+
+This will install the human 37 assembly as a reference genome.
 
 4. Place your vcf files in your desired output folder. It is recommended that you name this folder based on your project's name
-5. From within an R session, you can now generate the matrices as follows:
+
+5. From within the same R session, you can now generate the matrices as follows:
 ```
-$ R
 >> library("SigProfilerMatrixGeneratorR")
->> matrices <- SigProfilerMatrixGeneratorR("BRCA", "GRCh37", "/Users/ebergstr/Desktop/BRCA/", plot=T, exome=False, bed_file=None, chrom_based=False, tsb_stat=False, seqInfo=False, cushion=100)
+>> matrices <- SigProfilerMatrixGeneratorR("BRCA", "GRCh37", "/Users/ebergstr/Desktop/BRCA/", plot=T, exome=F, bed_file=NULL, chrom_based=F, tsb_stat=False, seqInfo=False, cushion=100)
 ```
   The layout of the required parameters are as follows:
   
@@ -44,12 +66,12 @@ $ R
       
   where project, reference_genome, and path_to_input_files must be strings (surrounded by quotation marks, ex: "test"). Optional parameters include:
       
-      exome=False:       [boolean] Downsamples mutational matrices to the exome regions of the genome
-      bed_file=None      [string path to bed_file] Downsamples mutational matrices to custom regions of the genome. Requires the full path to the BED file. 
-      chrom_based=False  [boolean] Outputs chromosome-based matrices
-      plot=False         [boolean] Integrates with SigProfilerPlotting to output all available visualizations for each matrix. 
-      tsb_stat=False     [boolean] Outputs the results of a transcriptional strand bias test for the respective matrices. 
-      seqInfo=False      [boolean] Ouputs original mutations into a text file that contains the SigProfilerMatrixGenerator classificaiton for each mutation. 
+      exome=FALSe:       [boolean] Downsamples mutational matrices to the exome regions of the genome
+      bed_file=NULL      [string path to bed_file] Downsamples mutational matrices to custom regions of the genome. Requires the full path to the BED file. 
+      chrom_based=FALSE  [boolean] Outputs chromosome-based matrices
+      plot=FALSE         [boolean] Integrates with SigProfilerPlotting to output all available visualizations for each matrix. 
+      tsb_stat=FALSE     [boolean] Outputs the results of a transcriptional strand bias test for the respective matrices. 
+      seqInfo=FALSE     [boolean] Ouputs original mutations into a text file that contains the SigProfilerMatrixGenerator classificaiton for each mutation. 
       cushion=100	[integer] Adds an Xbp cushion to the exome/bed_file ranges for downsampling the mutations.
   
 
