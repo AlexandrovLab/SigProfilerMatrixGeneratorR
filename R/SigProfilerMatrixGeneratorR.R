@@ -15,9 +15,27 @@ SigProfilerMatrixGeneratorR <- function(project, genome, matrix_path, exome=F, b
   sys <- reticulate::import("sys")
 
   matGen <- reticulate::import("SigProfilerMatrixGenerator.scripts.SigProfilerMatrixGeneratorFunc")
+ 
+  
   matrices <- matGen$SigProfilerMatrixGeneratorFunc(project, genome, matrix_path, exome, bed_file, chrom_based, plot, tsb_stat, seqInfo, cushion, gs)
+   
+   
   sys$stdout$flush()
   return(matrices)
+}
+
+CNVMatrixGenerator <- function(file_type, input_file, project, output_path) {
+  cnv <- reticulate::import("SigProfilerMatrixGenerator.scripts.CNVMatrixGenerator")
+  cnv_matrices <- cnv$CNVMatrixGenerator(file_type, input_file, project, output_path)
+  return(cnv_matrices)
+
+}
+
+SVMatrixGenerator <- function(input_dir, project, output_dir) {
+   sv <- reticulate::import("SigProfilerMatrixGenerator.scripts.SVMatrixGenerator")
+   sv_matrices <- sv$SVMatrixGenerator(input_dir, project, output_dir)
+   return(sv_matrices)
+
 }
 
 #' @export install
