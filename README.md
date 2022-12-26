@@ -22,6 +22,14 @@ reticulate* (R)
 
 *Reticulate has a known bug of preventing python print statements from flushing to standard out. As a result, some of the typical progress messages are delayed.
 
+Alternatively, you can set up a conda environment with all the prerequisites. You can download minicoda for your operating system [here](https://docs.conda.io/en/latest/miniconda.html) and follow the instructions below:
+
+```
+conda create --name spmg_r -y
+conda activate spmg_r
+conda install python=3.10 r-base r-devtools r-reticulate -c conda-forge -y
+```
+
 **QUICK START GUIDE**
 
 This section will guide you through the minimum steps required to create mutational matrices:
@@ -32,8 +40,8 @@ This section will guide you through the minimum steps required to create mutatio
 2. Open an R session and ensure that your R interpreter recognizes the path to your python3 installation:
 ```
 $ R
->> library("reticulate")
->> use_python("path_to_your_python3")
+>> library(reticulate)
+>> use_python("[path_to_your_python3]") # if using conda the path will be [path_to_your_conda]/envs/spmg_r/bin/python
 >> py_config()
 python:         /anaconda3/bin/python3
 libpython:      /anaconda3/lib/libpython3.6m.dylib
@@ -46,7 +54,7 @@ If you do not see your python3 path listed, restart your R session and rerun the
 
 2. Install SigProfilerMatrixGeneratorR using devtools:
 ```
->>library("devtools")
+>>library(devtools)
 >>install_github("AlexandrovLab/SigProfilerMatrixGeneratorR")
 ```
 3. Load the package in the same R session and install your desired reference genome as follows (available reference genomes are: GRCh37, GRCh38, mm9, and mm10):
@@ -62,7 +70,7 @@ This will install the human 37 assembly as a reference genome.
 5. From within the same R session, you can now generate the matrices as follows:
 ```
 >> library("SigProfilerMatrixGeneratorR")
->> matrices <- SigProfilerMatrixGeneratorR("BRCA", "GRCh37", "/Users/ebergstr/Desktop/BRCA/", plot=T, exome=F, bed_file=NULL, chrom_based=F, tsb_stat=False, seqInfo=False, cushion=100)
+>> matrices <- SigProfilerMatrixGeneratorR("BRCA", "GRCh37", "[path_to_repo]/test_data/SBS", plot=T, exome=F, bed_file=NULL, chrom_based=F, tsb_stat=False, seqInfo=False, cushion=100)
 ```
   The layout of the required parameters are as follows:
   
@@ -75,8 +83,8 @@ This will install the human 37 assembly as a reference genome.
       chrom_based=FALSE  [boolean] Outputs chromosome-based matrices
       plot=FALSE         [boolean] Integrates with SigProfilerPlotting to output all available visualizations for each matrix. 
       tsb_stat=FALSE     [boolean] Outputs the results of a transcriptional strand bias test for the respective matrices. 
-      seqInfo=FALSE     [boolean] Ouputs original mutations into a text file that contains the SigProfilerMatrixGenerator classificaiton for each mutation. 
-      cushion=100	[integer] Adds an Xbp cushion to the exome/bed_file ranges for downsampling the mutations.
+      seqInfo=FALSE      [boolean] Ouputs original mutations into a text file that contains the SigProfilerMatrixGenerator classificaiton for each mutation. 
+      cushion=100        [integer] Adds an Xbp cushion to the exome/bed_file ranges for downsampling the mutations.
   
 
 

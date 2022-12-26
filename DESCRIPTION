@@ -1,7 +1,7 @@
 Package: SigProfilerMatrixGeneratorR
 Type: Package
 Title: An R wrapper for running the SigProfilerMatrixGenerator framework
-Version: 0.1.0
+Version: 1.2.13
 Author: Erik Bergstrom
 Maintainer: Erik Bergstrom <ebergstr@eng.ucsd.edu>
 Description: SigProfilerMatrixGenerator creates mutational matrices for all types of somatic mutations. 
