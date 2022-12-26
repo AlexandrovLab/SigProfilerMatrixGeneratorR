@@ -22,7 +22,7 @@ SigProfilerMatrixGeneratorR <- function(project, genome, matrix_path, exome=F, b
 #' @export CNVMatrixGenerator
 CNVMatrixGenerator <- function(file_type, input_file, project, output_path) {
   cnv <- reticulate::import("SigProfilerMatrixGenerator.scripts.CNVMatrixGenerator")
-  cnv_matrices <- cnv$CNVMatrixGenerator(file_type, input_file, project, output_path)
+  cnv_matrices <- cnv$generateCNVMatrix(file_type, input_file, project, output_path)
   return(cnv_matrices)
 
 }
@@ -30,7 +30,7 @@ CNVMatrixGenerator <- function(file_type, input_file, project, output_path) {
 #' @export SVMatrixGenerator
 SVMatrixGenerator <- function(input_dir, project, output_dir) {
    sv <- reticulate::import("SigProfilerMatrixGenerator.scripts.SVMatrixGenerator")
-   sv_matrices <- sv$SVMatrixGenerator(input_dir, project, output_dir)
+   sv_matrices <- sv$generateSVMatrix(input_dir, project, output_dir)
    return(sv_matrices)
 
 }
