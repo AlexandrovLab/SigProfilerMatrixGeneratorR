@@ -11,7 +11,7 @@ The purpose of this document is to provide a guide for using the SigProfilerMatr
 
 **PREREQUISITES**
 
-devtools  (R) 
+devtools  (R)
 ```R
 >> install.packages("devtools")
 ```
@@ -89,11 +89,11 @@ SigProfilerMatrixGeneratorFunc(project, reference_genome, path_to_input_files)
 
 
       exome=FALSe:       [boolean] Downsamples mutational matrices to the exome regions of the genome
-      bed_file=NULL      [string path to bed_file] Downsamples mutational matrices to custom regions of the genome. Requires the full path to the BED file. 
+      bed_file=NULL      [string path to bed_file] Downsamples mutational matrices to custom regions of the genome. Requires the full path to the BED file.
       chrom_based=FALSE  [boolean] Outputs chromosome-based matrices
-      plot=FALSE         [boolean] Integrates with SigProfilerPlotting to output all available visualizations for each matrix. 
-      tsb_stat=FALSE     [boolean] Outputs the results of a transcriptional strand bias test for the respective matrices. 
-      seqInfo=FALSE      [boolean] Ouputs original mutations into a text file that contains the SigProfilerMatrixGenerator classificaiton for each mutation. 
+      plot=FALSE         [boolean] Integrates with SigProfilerPlotting to output all available visualizations for each matrix.
+      tsb_stat=FALSE     [boolean] Outputs the results of a transcriptional strand bias test for the respective matrices.
+      seqInfo=FALSE      [boolean] Ouputs original mutations into a text file that contains the SigProfilerMatrixGenerator classificaiton for each mutation.
       cushion=100        [integer] Adds an Xbp cushion to the exome/bed_file ranges for downsampling the mutations.
 
 
@@ -112,7 +112,7 @@ SigProfilerMatrixGeneratorFunc(project, reference_genome, path_to_input_files)
 
 **INPUT FILE FORMAT**
 
-This tool currently supports maf, vcf, simple text file, and ICGC formats. The user must provide variant data adhering to one of these four formats. If the user’s files are in vcf format, each sample must be saved as a separate files. 
+This tool currently supports maf, vcf, simple text file, and ICGC formats. The user must provide variant data adhering to one of these four formats. If the user’s files are in vcf format, each sample must be saved as a separate files.
 
 
 **Output File Structure**
@@ -129,20 +129,20 @@ GRCh38.p12 [GRCh38] (Genome Reference Consortium Human Reference 37), INSDC
 Assembly GCA_000001405.27, Dec 2013. Released July 2014. Last updated January 2018. This genome was downloaded from ENSEMBL database version 93.38.
 
 GRCh37.p13 [GRCh37] (Genome Reference Consortium Human Reference 37), INSDC
-Assembly GCA_000001405.14, Feb 2009. Released April 2011. Last updated September 2013. This genome was downloaded from ENSEMBL database version 93.37. 
+Assembly GCA_000001405.14, Feb 2009. Released April 2011. Last updated September 2013. This genome was downloaded from ENSEMBL database version 93.37.
 
 GRCm38.p6 [mm10] (Genome Reference Consortium Mouse Reference 38), INDSDC
-Assembly GCA_000001635.8, Jan 2012. Released July 2012. Last updated March 2018. This genome was downloaded from ENSEMBL database version 93.38. 
+Assembly GCA_000001635.8, Jan 2012. Released July 2012. Last updated March 2018. This genome was downloaded from ENSEMBL database version 93.38.
 
 GRCm37 [mm9] (Release 67, NCBIM37), INDSDC Assembly GCA_000001635.18.
 Released Jan 2011. Last updated March 2012. This genome was downloaded from ENSEMBL database version release 67.
 
-rn6 (Rnor_6.0) INSDC Assembly GCA_000001895.4, Jul 2014. Released Jun 2015. Last updated Jan 2017. 
+rn6 (Rnor_6.0) INSDC Assembly GCA_000001895.4, Jul 2014. Released Jun 2015. Last updated Jan 2017.
 This genome was downloaded from ENSEMBL database version 96.6.
 
 **LOG FILES**
 
-All errors and progress checkpoints are saved into *sigProfilerMatrixGenerator_[project]_[genome].err* and *sigProfilerMatrixGenerator_[project]_[genome].out*, respectively. 
+All errors and progress checkpoints are saved into *sigProfilerMatrixGenerator_[project]_[genome].err* and *sigProfilerMatrixGenerator_[project]_[genome].out*, respectively.
 For all errors, please email the error and progress log files to the primary contact under CONTACT INFORMATION.
 
 **CITATION**
@@ -162,8 +162,9 @@ Redistributions of source code must retain the above copyright notice, this list
 
 Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 **CONTACT INFORMATION**
 
-Please address any queries or bug reports to Erik Bergstrom at ebergstr@eng.ucsd.edu
+Please address any queries or bug reports for SBS/ID/DBS to Erik Bergstrom at ebergstr@eng.ucsd.edu
+Please address any queries or bug reports for CNV/SV to Azhar Khandekar at akhandek@eng.ucsd.edu
