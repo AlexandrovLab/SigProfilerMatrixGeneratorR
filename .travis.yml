@@ -1,5 +1,6 @@
 dist: xenial
 language: r
+latex: false
 
 r:
   - release
@@ -12,13 +13,6 @@ addons:
 
 cache:
   packages: true
-
-python:
-  - '3.7'
-
-install:
-  - pip install SigProfilerMatrixGenerator
-
 
 warnings_are_errors: false
 
