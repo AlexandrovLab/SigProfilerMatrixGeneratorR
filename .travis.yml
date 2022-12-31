@@ -4,6 +4,12 @@ language: r
 r:
   - release
 
+addons:
+  apt:
+    packages:
+      - libharfbuzz-dev
+      - libfribidi-dev
+
 cache:
   packages: true
 
