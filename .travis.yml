@@ -1,8 +1,15 @@
-language: R
+dist: xenial
+language: r
 
-sudo: false
-cache: packages
+r: '4.2.2'
+addons:
+  apt:
+    packages:
+      - libharfbuzz-dev
+      - libfribidi-dev
+cache:
+  packages: true
+
 warnings_are_errors: false
-r:
-   - release
-   - devel
+
+script: R -f test.R
