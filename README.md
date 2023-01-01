@@ -97,7 +97,7 @@ SigProfilerMatrixGeneratorFunc(project, reference_genome, path_to_input_files)
       cushion=100        [integer] Adds an Xbp cushion to the exome/bed_file ranges for downsampling the mutations.
 
 
-**CNV &SV: Setting up R environment with conda**
+**CNV & SV: Setting up R environment with conda**
 
 ```
 conda create --name spmg_r_1.2.13 -y
