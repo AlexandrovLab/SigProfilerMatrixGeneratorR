@@ -97,7 +97,7 @@ SigProfilerMatrixGeneratorFunc(project, reference_genome, path_to_input_files)
       cushion=100        [integer] Adds an Xbp cushion to the exome/bed_file ranges for downsampling the mutations.
 
 
-**Setting up R environment with conda (optional but recommended if using R):**
+**CNV &SV: Setting up R environment with conda**
 
 ```
 conda create --name spmg_r_1.2.13 -y
@@ -108,7 +108,7 @@ echo 'devtools::install_github("AlexandrovLab/SigProfilerMatrixGeneratorR")' | R
 
 ```
 
-****CNV****
+****Generating CNV matrices****
 ```R
 >> library("SigProfilerMatrixGeneratorR")
 >> matrix_cnv <- CNVMatrixGenerator("BATTENBERG", "[path_to_repo]/test_data/CNV", "test_CNV", "output_dir_CNV")
@@ -128,7 +128,7 @@ These are the acceptable parameters that can be passed into the function call.<b
 
  - **project:** Project name for this instance of matrix generation. <br> *Type:* string <br> *Example:* "560-Breast"
 
-****SV****
+****Generating SV Matrices****
 ```R
 >> library("SigProfilerMatrixGeneratorR")
 >> matrix_sv <- SVMatrixGenerator("[path_to_repo]/test_data/SV", "test_SV", "output_dir_SV")
