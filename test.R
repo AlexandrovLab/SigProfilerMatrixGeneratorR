@@ -1,4 +1,4 @@
 library(devtools)
-install_github("AlexandrovLab/SigProfilerMatrixGeneratorR@development")
+install_github("AlexandrovLab/SigProfilerMatrixGeneratorR")
 
 library(SigProfilerMatrixGeneratorR)
