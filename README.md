@@ -97,28 +97,57 @@ SigProfilerMatrixGeneratorFunc(project, reference_genome, path_to_input_files)
       cushion=100        [integer] Adds an Xbp cushion to the exome/bed_file ranges for downsampling the mutations.
 
 
-****CNV****
+**CNV & SV: Setting up R environment with conda**
+
+```
+conda create --name spmg_r_1.2.13 -y
+conda activate spmg_r_1.2.13
+conda install python=3.10 r-base r-devtools r-reticulate -c conda-forge -y
+pip install SigProfilerMatrixGenerator
+echo 'devtools::install_github("AlexandrovLab/SigProfilerMatrixGeneratorR")' | Rscript -
+
+```
+
+****Generating CNV matrices****
 ```R
 >> library("SigProfilerMatrixGeneratorR")
 >> matrix_cnv <- CNVMatrixGenerator("BATTENBERG", "[path_to_repo]/test_data/CNV", "test_CNV", "output_dir_CNV")
 ```
 
-****SV****
+### CNV Function Arguments ###
+
+These are the acceptable parameters that can be passed into the function call.<br>
+
+**Required:**<br>
+ - **file_type:** Segmentation/caller type. Currently supported callers are ["ASCAT", "ASCAT_NGS", "SEQUENZA", "ABSOLUTE", "BATTENBERG", "FACETS", "PURPLE", "TCGA"]. <br> *Type:* string <br> *Example:* "BATTENBERG"
+
+
+ - **input_file:** Path to directory containing SV bedpe files, one per sample. <br> *Type:* string <br> *Example:* "./SigProfilerMatrixGenerator/references/SV/example_input/560-Breast"
+
+ - **output_path:** Path to directory for output files. If this directory doesn't exist, a new one will created. <br> *Type:* string <br> *Example:* "./SigProfilerMatrixGenerator/references/SV/example_output/"
+
+ - **project:** Project name for this instance of matrix generation. <br> *Type:* string <br> *Example:* "560-Breast"
+
+****Generating SV Matrices****
 ```R
 >> library("SigProfilerMatrixGeneratorR")
 >> matrix_sv <- SVMatrixGenerator("[path_to_repo]/test_data/SV", "test_SV", "output_dir_SV")
 ```
 
+### SV Function Arguments ###
+
+These are the acceptable parameters that can be passed into the function call.<br>
+
+**Required:**<br>
+ - **project:** Project name for this instance of matrix generation. <br> *Type:* string <br> *Example:* "560-Breast"
+
+ - **input_dir:** Path to directory containing SV bedpe files, one per sample. <br> *Type:* string <br> *Example:* "./SigProfilerMatrixGenerator/references/SV/example_input/560-Breast"
+
+ - **output_dir:** Path to directory for output files. If this directory doesn't exist, a new one will created. <br> *Type:* string <br> *Example:* "./SigProfilerMatrixGenerator/references/SV/example_output/"
 
 **INPUT FILE FORMAT**
 
 This tool currently supports maf, vcf, simple text file, and ICGC formats. The user must provide variant data adhering to one of these four formats. If the user’s files are in vcf format, each sample must be saved as a separate files.
-
-
-**Output File Structure**
-
-The output structure is divided into three folders: input, output, and logs. The input folder contains copies of the user-provided input files. The outputfolder contains
-a DBS, SBS, ID, and TSB folder (there will also be a plots folder if this parameter is chosen). The matrices are saved into the appropriate folders. The logs folder contains the error and log files for the submitted job.
 
 
 **SUPPORTED GENOMES**
