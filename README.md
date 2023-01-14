@@ -97,6 +97,12 @@ SigProfilerMatrixGeneratorFunc(project, reference_genome, path_to_input_files)
       cushion=100        [integer] Adds an Xbp cushion to the exome/bed_file ranges for downsampling the mutations.
 
 
+**INPUT FILE FORMAT**
+
+This tool currently supports maf, vcf, simple text file, and ICGC formats. The user must provide variant data adhering to one of these four formats. If the user’s files are in vcf format, each sample must be saved as a separate files.
+
+
+
 **CNV & SV: Setting up R environment with conda**
 
 ```
@@ -144,10 +150,6 @@ These are the acceptable parameters that can be passed into the function call.<b
  - **input_dir:** Path to directory containing SV bedpe files, one per sample. <br> *Type:* string <br> *Example:* "./SigProfilerMatrixGenerator/references/SV/example_input/560-Breast"
 
  - **output_dir:** Path to directory for output files. If this directory doesn't exist, a new one will created. <br> *Type:* string <br> *Example:* "./SigProfilerMatrixGenerator/references/SV/example_output/"
-
-**INPUT FILE FORMAT**
-
-This tool currently supports maf, vcf, simple text file, and ICGC formats. The user must provide variant data adhering to one of these four formats. If the user’s files are in vcf format, each sample must be saved as a separate files.
 
 
 **SUPPORTED GENOMES**
